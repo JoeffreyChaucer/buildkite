@@ -4,7 +4,7 @@ steps:
       - chronotc/monorepo-diff#v2.3.0:
           diff: 'git diff --name-only HEAD~1'
           watch:
-            - path: '**/*.!m'
+            - path: '**/*!.md'
               config:
                 label: 'stfu'
                 command: 'echo deploy-stfu'
