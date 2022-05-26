@@ -6,4 +6,5 @@ steps:
           watch:
             - path: '**/*.!m*'
               config:
-                command: 'echo deploy-bar'
+                label: STFU
+                command: 'echo stfu'
