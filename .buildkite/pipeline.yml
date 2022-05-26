@@ -1,0 +1,13 @@
+steps:
+  - label: 'Script'
+    key: 'test'
+    commands: .buildkite/steps/script.sh
+  - command: 'echo running CI'
+    key: 'CI'
+    depends_on: 'test'
+  - command: 'echo Step-A'
+    key: 'Step-A'
+    depends_on: ~
+  - command: 'echo Step-B'
+    key: 'Step-B'
+    depends_on: ~
