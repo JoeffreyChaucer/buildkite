@@ -11,7 +11,6 @@ git diff --stat $BUILDKITE_PULL_REQUEST_BASE_BRANCH...$BUILDKITE_COMMIT
 if ! git diff --name-only $BUILDKITE_PULL_REQUEST_BASE_BRANCH...$BUILDKITE_COMMIT | grep -qvE '(*.md)'
 then
     echo "Only docs were updated, not running the CI."
-    SKIP_STEPS=$yes
     exit 0
 fi
 
