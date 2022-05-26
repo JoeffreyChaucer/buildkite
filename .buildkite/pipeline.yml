@@ -8,3 +8,7 @@ steps:
               config:
                 label: 'stfu'
                 command: 'echo deploy-stfu'
+            - path: buildkite/
+              config:
+              label: 'NOT YoU'
+              command: 'echo Not you'
