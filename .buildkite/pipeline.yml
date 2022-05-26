@@ -4,11 +4,7 @@ steps:
       - chronotc/monorepo-diff#v2.3.0:
           diff: 'git diff --name-only HEAD~1'
           watch:
-            - path: '**/*.md'
+            - path: $(git ls-files -- . ':!:*.md')
               config:
                 label: 'stfu'
                 command: 'echo deploy-stfu'
-            - path: buildkite/
-              config:
-                label: 'NOT YoU'
-                command: 'echo Not you'
