@@ -1,9 +1,9 @@
 steps:
-  - command: 'echo running CI'
-    key: 'CI'
-  - command: 'echo Step-A'
-    key: 'Step-A'
-    depends_on: ~
-  - command: 'echo Step-B'
-    key: 'Step-B'
-    depends_on: ~
+  - label: 'Triggering pipelines'
+    plugins:
+      - chronotc/monorepo-diff#v2.3.0:
+          diff: 'git diff --name-only HEAD~1'
+          watch:
+            - path: '**/*.!m*'
+              config:
+                command: 'echo deploy-bar'
