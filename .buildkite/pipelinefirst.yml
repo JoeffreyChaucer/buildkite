@@ -1,4 +1,0 @@
-steps:
-  - label: 'Script'
-    key: 'test'
-    commands: .buildkite/steps/script.sh
