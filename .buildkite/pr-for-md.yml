@@ -1,0 +1,8 @@
+steps:
+  - label: '🔨 Check for MD file'
+    command: filter-md-file.sh
+    key: filter-md-file
+  - label: ':pipeline:'
+    command: trigger-pr-pipeline-build.sh
+    depends_on: filter-md-file
+    allow_dependency_failure: true
